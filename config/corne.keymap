@@ -36,7 +36,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        QWERTY {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
             // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
@@ -51,7 +51,7 @@
             >;
         };
 
-        lower_layer {
+        NAV {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  1    |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
             // | LCTRL| BTCLR | BT0 | BT1 | BT2 | BT3 |   | LFT | DWN |  UP | RGT |     |      |
@@ -59,10 +59,10 @@
             //                      | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB    &kp N1      &kp N2        &kp N3        &kp N4        &kp N5          &kp N6    &kp N7    &kp N8    &kp N9     &kp N0  &bs_del
-&kp LCTRL  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3    &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &trans  &trans
-&kp ESC    &trans      &kp HOME      &kp PG_UP     &kp PG_DN     &kp END         &trans    &trans    &trans    &trans     &trans  &trans
-                                     &kp LGUI      &trans        &kp SPACE       &kp RET   &trans    &kp RALT
+&kp TAB     &kp N1  &kp N2  &kp N3     &kp N4        &kp N5       &kp N6               &kp N7              &kp N8         &kp N9            &kp N0             &bs_del
+&kp LCTRL   &trans  &trans  &kp LCTRL  &kp LEFT_ALT  &kp LGUI     &trans               &hm PG_UP UP_ARROW  &trans         &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans
+&kp LSHIFT  &trans  &trans  &trans     &trans        &trans       &hm HOME LEFT_ARROW  &hm PAGE_DOWN DOWN  &hm END RIGHT  &trans            &trans             &trans
+                            &kp LGUI   &trans        &kp SPACE    &kp RET              &trans              &kp RALT
             >;
         };
 
@@ -78,6 +78,15 @@
 &kp LCTRL  &rgb_ug RGB_TOG  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &trans         &kp MINUS  &kp EQUAL  &kp LBKT         &kp RBKT  &kp BSLH  &kp GRAVE
 &kp LSHFT  &rgb_ug RGB_EFF  &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &bootloader    &kp UNDER  &kp PLUS   &kp LBRC         &kp RBRC  &kp PIPE  &kp TILDE
                                              &kp LGUI         &trans           &kp SPACE      &kp RET    &trans     &kp RALT
+            >;
+        };
+
+        control {
+            bindings = <
+&trans  &bt BT_CLR_ALL  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3    &trans  &trans  &trans  &trans  &trans  &bs_del
+&trans  &trans          &trans        &trans        &trans        &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans          &trans        &trans        &trans        &trans          &trans  &trans  &trans  &trans  &trans  &trans
+                                      &trans        &trans        &trans          &trans  &trans  &trans
             >;
         };
     };
