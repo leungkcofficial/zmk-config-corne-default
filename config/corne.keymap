@@ -31,7 +31,7 @@
             bindings = <&kp BACKSPACE>, <&kp DEL>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            mods = <(MOD_LGUI|MOD_RGUI)>;
         };
 
         nav_hm_mkp: nav_hm_mkp {
@@ -71,16 +71,81 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
         };
-    };
 
-    combos {
-        compatible = "zmk,combos";
+        nav_hm_home: nav_hm_home {
+            compatible = "zmk,behavior-mod-morph";
+            label = "NAV_HM_HOME";
+            bindings = <&mkp LCLK>, <&kp HOME>;
 
-        tri_layer {
-            bindings = <&to 3>;
-            key-positions = <37 40>;
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        nav_hm_end: nav_hm_end {
+            compatible = "zmk,behavior-mod-morph";
+            label = "NAV_HM_END";
+            bindings = <&mkp RCLK>, <&kp END>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        qwerty_n_left: qwerty_n_left {
+            compatible = "zmk,behavior-mod-morph";
+            label = "QWERTY_N_LEFT";
+            bindings = <&kp N>, <&kp LEFT>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LALT)>;
+        };
+
+        qwerty_m_down: qwerty_m_down {
+            compatible = "zmk,behavior-mod-morph";
+            label = "QWERTY_M_DOWN";
+            bindings = <&kp M>, <&kp DOWN_ARROW>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LALT)>;
+        };
+
+        qwerty_comma_right: qwerty_comma_right {
+            compatible = "zmk,behavior-mod-morph";
+            label = "QWERTY_COMMA_RIGHT";
+            bindings = <&kp COMMA>, <&kp RIGHT>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LALT)>;
+        };
+
+        qwerty_hm_j_up: qwerty_hm_j_up {
+            compatible = "zmk,behavior-mod-morph";
+            label = "QWERTY_HM_J_UP";
+            bindings = <&hm RIGHT_ALT J>, <&kp UP>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LALT)>;
+        };
+
+        qwerty_hm_h_home: qwerty_hm_h_home {
+            compatible = "zmk,behavior-mod-morph";
+            label = "QWERTY_HM_H_HOME";
+            bindings = <&hm RIGHT_GUI H>, <&kp HOME>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LALT)>;
+        };
+
+        qwerty_hm_k_end: qwerty_hm_k_end {
+            compatible = "zmk,behavior-mod-morph";
+            label = "QWERTY_HM_K_END";
+            bindings = <&hm RCTRL K>, <&kp END>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LALT)>;
         };
     };
+
+    combos { compatible = "zmk,combos"; };
 
     keymap {
         compatible = "zmk,keymap";
@@ -93,10 +158,10 @@
             //                    | GUI | LWR | ENT |   | SPC | RSE  | ALT |
 
             bindings = <
-&kp TAB     &kp Q  &kp W  &kp E                 &kp R           &kp T             &kp Y            &kp U            &kp I        &kp O    &kp P     &bs_del
-&caps_word  &kp A  &kp S  &hm LCTRL D           &hm LEFT_ALT F  &hm LEFT_GUI G    &hm RIGHT_GUI H  &hm RIGHT_ALT J  &hm RCTRL K  &kp L    &kp SEMI  &kp SQT
-&kp LSHFT   &kp Z  &kp X  &kp C                 &kp V           &kp B             &kp N            &kp M            &kp COMMA    &kp DOT  &kp FSLH  &kp RSHFT
-                          &kp LS(LA(LC(LGUI)))  &to 1           &kp SPACE         &kp RET          &to 2            &kp ESCAPE
+&kp TAB     &kp Q  &kp W  &kp E                 &kp R           &kp T             &kp Y              &kp U            &kp I                &kp O    &kp P     &bs_del
+&caps_word  &kp A  &kp S  &hm LCTRL D           &hm LEFT_ALT F  &hm LEFT_GUI G    &qwerty_hm_h_home  &qwerty_hm_j_up  &qwerty_hm_k_end     &kp L    &kp SEMI  &kp SQT
+&kp LSHFT   &kp Z  &kp X  &kp C                 &kp V           &kp B             &qwerty_n_left     &qwerty_m_down   &qwerty_comma_right  &kp DOT  &kp FSLH  &kp RSHFT
+                          &kp LS(LA(LC(LGUI)))  &to 1           &kp SPACE         &kp RET            &to 2            &kp ESCAPE
             >;
         };
 
@@ -109,7 +174,7 @@
 
             bindings = <
 &kp TAB     &kp N1  &kp N2  &kp N3                &kp N4        &kp N5       &kp N6                      &kp N7           &kp N8                        &kp N9            &kp N0             &bs_del
-&caps_word  &trans  &trans  &kp LCTRL             &kp LEFT_ALT  &kp LGUI     &mkp LCLK                   &nav_mouse_up    &mkp RCLK                     &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp NON_US_BACKSLASH
+&caps_word  &trans  &trans  &kp LCTRL             &kp LEFT_ALT  &kp LGUI     &nav_hm_home                &nav_mouse_up    &nav_hm_end                   &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp NON_US_BACKSLASH
 &kp LSHIFT  &trans  &trans  &trans                &trans        &trans       &nav_hm_mmv MOVE_LEFT LEFT  &nav_mouse_down  &nav_hm_mmv MOVE_RIGHT RIGHT  &kp COMMA         &kp PERIOD         &kp RIGHT_SHIFT
                             &kp LS(LA(LC(LGUI)))  &to 0         &kp SPACE    &kp RET                     &trans           &kp ESC
             >;
