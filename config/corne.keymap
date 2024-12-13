@@ -33,6 +33,15 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        tri_layer {
+            bindings = <&to 3>;
+            key-positions = <37 40>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -47,7 +56,7 @@
 &kp TAB     &kp Q  &kp W  &kp E                 &kp R           &kp T             &kp Y    &kp U  &kp I       &kp O    &kp P     &bs_del
 &caps_word  &kp A  &kp S  &hm LCTRL D           &hm LEFT_ALT F  &hm LEFT_GUI G    &kp H    &kp J  &kp K       &kp L    &kp SEMI  &kp SQT
 &kp LSHFT   &kp Z  &kp X  &kp C                 &kp V           &kp B             &kp N    &kp M  &kp COMMA   &kp DOT  &kp FSLH  &kp RSHFT
-                          &kp LS(LA(LC(LGUI)))  &mo 1           &kp SPACE         &kp RET  &mo 2  &kp ESCAPE
+                          &kp LS(LA(LC(LGUI)))  &to 1           &kp SPACE         &kp RET  &to 2  &kp ESCAPE
             >;
         };
 
@@ -86,17 +95,10 @@
 &kp TAB         &bt BT_CLR_ALL   &bt BT_SEL 0     &bt BT_SEL 1          &bt BT_SEL 2     &bt BT_SEL 3    &trans   &trans  &trans   &trans  &trans  &bs_del
 &caps_word      &rgb_ug RGB_TOG  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI       &rgb_ug RGB_BRI  &trans          &trans   &trans  &trans   &trans  &trans  &trans
 &kp LEFT_SHIFT  &rgb_ug RGB_EFF  &rgb_ug RGB_HUD  &rgb_ug RGB_SAD       &rgb_ug RGB_BRD  &trans          &trans   &trans  &trans   &trans  &trans  &trans
-                                                  &kp LA(LS(LC(LGUI)))  &trans           &kp SPACE       &kp RET  &trans  &kp ESC
+                                                  &kp LA(LS(LC(LGUI)))  &to 0            &kp SPACE       &kp RET  &trans  &kp ESC
             >;
         };
     };
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        tri_layer {
-            if-layers = <1 2>;
-            then-layer = <3>;
-        };
-    };
+    conditional_layers { compatible = "zmk,conditional-layers"; };
 };
