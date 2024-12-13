@@ -47,7 +47,7 @@
         nav_hm_mmv: nav_hm_mmv {
             compatible = "zmk,behavior-hold-tap";
             label = "NAV_HM_MMV";
-            bindings = <&mkp>, <&kp>;
+            bindings = <&mmv>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <100>;
