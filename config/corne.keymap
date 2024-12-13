@@ -91,8 +91,8 @@
 
             bindings = <
 &kp TAB     &kp N1         &kp N2              &kp N3                &kp N4        &kp N5       &kp N6            &kp N7             &kp N8     &kp N9     &kp N0     &bs_del
-&caps_word  &trans         &hm PG_UP UP_ARROW  &kp LCTRL             &kp LEFT_ALT  &kp LGUI     &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &mkp LCLK  &mkp LCLK  &mkp RCLK  &kp NON_US_BACKSLASH
-&kp LSHIFT  &hm HOME LEFT  &hm PG_DN DOWN      &hm END RIGHT         &trans        &trans       &kp COMMA         &kp PERIOD         &mkp LCLK  &mkp LCLK  &mkp MB1   &kp RIGHT_SHIFT
+&caps_word  &trans         &hm PG_UP UP_ARROW  &kp LCTRL             &kp LEFT_ALT  &kp LGUI     &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &mkp LCLK  &mmv MOVE_UP  &mkp RCLK  &kp NON_US_BACKSLASH
+&kp LSHIFT  &hm HOME LEFT  &hm PG_DN DOWN      &hm END RIGHT         &trans        &trans       &kp COMMA         &kp PERIOD         &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT   &kp RIGHT_SHIFT
                                                &kp LS(LA(LC(LGUI)))  &to 0         &kp SPACE    &kp RET           &trans             &kp ESC
             >;
         };
