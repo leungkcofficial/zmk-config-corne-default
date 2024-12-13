@@ -57,7 +57,7 @@
         nav_mouse_up: nav_mouse_up {
             compatible = "zmk,behavior-mod-morph";
             label = "NAV_MOUSE_UP";
-            bindings = <&nav_hm_mmv MOVE_UP UP_ARROW>, <&mkp MB1>;
+            bindings = <&nav_hm_mmv MOVE_UP UP_ARROW>, <&msc SCRL_UP>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
