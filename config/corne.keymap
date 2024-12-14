@@ -67,7 +67,7 @@
         nav_mouse_down: nav_mouse_down {
             compatible = "zmk,behavior-mod-morph";
             label = "NAV_MOUSE_DOWN";
-            bindings = <&nav_hm_mmv MOVE_DOWN DOWN>, <&msc SCROLL_DOWN>;
+            bindings = <&nav_hm_mmv MOVE_DOWN DOWN>, <&msc SCRL_DOWN>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
