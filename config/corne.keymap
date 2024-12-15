@@ -99,7 +99,7 @@
 
             #binding-cells = <0>;
             mods = <(MOD_LALT)>;
-            keep-mods = <(MOD_LSFT)>;
+            keep-mods = <(MOD_LALT)>;
         };
 
         qwerty_m_down: qwerty_m_down {
@@ -109,7 +109,7 @@
 
             #binding-cells = <0>;
             mods = <(MOD_LALT)>;
-            keep-mods = <(MOD_LSFT)>;
+            keep-mods = <(MOD_LALT)>;
         };
 
         qwerty_comma_right: qwerty_comma_right {
@@ -119,7 +119,7 @@
 
             #binding-cells = <0>;
             mods = <(MOD_LALT)>;
-            keep-mods = <(MOD_LSFT)>;
+            keep-mods = <(MOD_LALT)>;
         };
 
         qwerty_hm_j_up: qwerty_hm_j_up {
@@ -129,7 +129,7 @@
 
             #binding-cells = <0>;
             mods = <(MOD_LALT)>;
-            keep-mods = <(MOD_LSFT)>;
+            keep-mods = <(MOD_LALT)>;
         };
 
         qwerty_hm_h_home: qwerty_hm_h_home {
@@ -139,7 +139,7 @@
 
             #binding-cells = <0>;
             mods = <(MOD_LALT)>;
-            keep-mods = <(MOD_LSFT)>;
+            keep-mods = <(MOD_LALT)>;
         };
 
         qwerty_hm_k_end: qwerty_hm_k_end {
@@ -149,7 +149,7 @@
 
             #binding-cells = <0>;
             mods = <(MOD_LALT)>;
-            keep-mods = <(MOD_LSFT)>;
+            keep-mods = <(MOD_LALT)>;
         };
     };
 
